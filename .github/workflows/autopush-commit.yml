@@ -1,0 +1,27 @@
+name: Autopush commit
+
+on:
+  push:
+    branches:
+      - master
+
+#permissions:
+#  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+#        with:
+#          token: ${{ secrets.GH_PUSH_TOKEN }}
+
+      - name: Bump version and create tag
+        id: bump-version
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Empty test commit"
+          git push origin master
