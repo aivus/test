@@ -56,7 +56,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          TAG=$(npm version ${{ github.event.inputs.bump }} -m "Release %s")
           git commit --allow-empty -m "Publish workflow test commit"
 
       - name: Push changes to master
