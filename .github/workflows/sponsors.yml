@@ -15,8 +15,7 @@ jobs:
       - name: Generate Sponsors 💖
         uses: JamesIves/github-sponsors-readme-action@v1
         with:
-          # token: ${{ secrets.READ_TOKEN }}
-          token: ${{ secrets.READ_FINE_GRAINED_TOKEN }}
+          token: ${{ secrets.READ_TOKEN }}
           file: 'README.md'
           active-only: false
           include-private: true
