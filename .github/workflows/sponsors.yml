@@ -18,6 +18,7 @@ jobs:
           token: ${{ secrets.READ_TOKEN }}
           file: 'README.md'
           active-only: false
+          include-private: true
 
       - name: Commit changes
         run: |
